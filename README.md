@@ -1,9 +1,9 @@
 [![Build Status](https://travis-ci.com/SebastienEveno/molecule-parser.svg?branch=master)](https://travis-ci.com/SebastienEveno/molecule-parser)
 
 # Chemical Formula Parser
-This code can be used to parse chemical formulas (as strings).
+This Python code can be used to parse chemical formulas, from string input format to a dictionary.
 
-## Python required version
+## Required Python version
 The required Python version is 3.9.
 Local python version:
 ```
