@@ -10,19 +10,14 @@ Local Python version:
 ```
 python --version
 ```
-## Examples
-### Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>
-`"Al2(SO4)3"` will give `{'Al': 2, 'S': 3, 'O': 12}`.
 
-```
-> python main.py -i
-Al2(SO4)3
-^Z
-```
-returns
-```
-{'Al': 2, 'S': 3, 'O': 12}
-```
+## Use
+
+Use the command line `python main.py -i` to read from user input.
+You can add as many chemical formulas, line by line.
+Use `^Z` (ctrl +Z) to escape the input command.
+
+## Examples
 
 ### Fe<sub>2</sub>O<sub>3</sub>
 
