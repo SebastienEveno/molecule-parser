@@ -17,3 +17,6 @@ class AtomTestCase(unittest.TestCase):
     def test_get_number(self) -> None:
         """Test if getNumber() works."""
         self.assertEqual(self.atom.getNumber(), 1)
+
+if __name__ == "__main__":
+    unittest.main()

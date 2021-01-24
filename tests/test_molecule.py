@@ -1,8 +1,8 @@
 """A test class that can be used to test a Molecule object."""
 
 import unittest
-from ChemicalFormulaParser.atom import Atom
-from ChemicalFormulaParser.molecule import Molecule
+from src.atom import Atom
+from src.molecule import Molecule
 
 class MoleculeTestCase(unittest.TestCase):
     """Tests for 'molecule.py'."""
@@ -19,3 +19,6 @@ class MoleculeTestCase(unittest.TestCase):
         """Test if addAtom() works."""
         self.molecule.addAtom(Atom('C'))
         self.assertEqual(self.molecule.getAtomsAsDict(), {'H': 6, 'O': 3, 'C': 3})
+
+if __name__ == "__main__":
+    unittest.main()
