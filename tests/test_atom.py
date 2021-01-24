@@ -1,7 +1,7 @@
 """A test class that can be used to test an Atom object."""
 
 import unittest
-from ChemicalFormulaParser.atom import Atom
+from src.atom import Atom
 
 class AtomTestCase(unittest.TestCase):
     """Tests for 'atom.py'."""

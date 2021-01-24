@@ -1,7 +1,7 @@
 """A test class that can be used to test MoleculeParser object."""
 
 import unittest
-from ChemicalFormulaParser.molecule_parser import MoleculeParser
+from src.molecule_parser import MoleculeParser
 
 class MoleculeParserTestCase(unittest.TestCase):
     """Tests for 'molecule_parser.py'."""
