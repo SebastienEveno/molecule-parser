@@ -21,7 +21,7 @@ Use `^Z` (ctrl +Z) to escape from the input command.
 
 ### CO and H<sub>2</sub>O
 ```
-> python parser.py -i
+$ python parser.py -i
 CO
 H2O
 ^Z
@@ -34,7 +34,7 @@ returns
 ### Fe<sub>2</sub>O<sub>3</sub>
 
 ```
-> python parser.py -i
+$ python parser.py -i
 Fe2O3
 ^Z
 ```
@@ -45,7 +45,7 @@ returns
 ### (NH<sub>4</sub>)<sub>2</sub>HPO<sub>4</sub>
 
 ```
-> python parser.py -i
+$ python parser.py -i
 (NH4)2HPO4
 ^Z
 ```
@@ -56,7 +56,7 @@ returns
 ### Mg<sub>2</sub>[CH<sub>4</sub>{NNi<sub>2</sub>(Li<sub>2</sub>O<sub>4</sub>)<sub>5</sub>}<sub>14</sub>]<sub>3</sub>
 
 ```
-> python parser.py -i
+$ python parser.py -i
 Mg2[CH4{NNi2(Li2O4)5}14]3
 ^Z
 ```
