@@ -5,7 +5,8 @@ This Python code can be used to parse chemical formulas, from string input forma
 
 ## Required Python version
 The required Python version is 3.9.
-Local python version:
+
+Local Python version:
 ```
 python --version
 ```
