@@ -1,10 +1,10 @@
-"""A class that can be used to represent a molecule parser."""
+"""A class that can be used to represent a chemical formula parser."""
 
 from src.atom import Atom
 from src.molecule import Molecule
 import re # for re.findall()
 
-# we use Regular Expression (RegEx) module to parse the molecular formula
+# we use Regular Expression (RegEx) module to parse the chemical formula
 # see https://www.w3schools.com/python/python_regex.asp
 
 class MoleculeParserError(Exception):
@@ -12,31 +12,31 @@ class MoleculeParserError(Exception):
     pass
 
 class EmptyMoleculeString(MoleculeParserError):
-    """Raised when empty molecular formula."""
-    def __init__(self, message: str = "The molecular formula is empty!") -> None:
+    """Raised when empty chemical formula."""
+    def __init__(self, message: str = "The chemical formula is empty!") -> None:
         self.message = message
         super().__init__(self.message)
     
 class BracketsNotOk(MoleculeParserError):
-    """Raised when brackets are missing in molecular formula."""
-    def __init__(self, message: str = "Missing brackets in molecular formula!") -> None:
+    """Raised when brackets are missing in chemical formula."""
+    def __init__(self, message: str = "Missing brackets in chemical formula!") -> None:
         self.message = message
         super().__init__(self.message)
 
 class hasNoLetters(MoleculeParserError):
-    """Raised when there is no letters in molecular formula."""
-    def __init__(self, message: str = "No letter in molecular formula!") -> None:
+    """Raised when there is no letters in chemical formula."""
+    def __init__(self, message: str = "No letter in chemical formula!") -> None:
         self.message = message
         super().__init__(self.message)
 
 class hasEmptyBrackets(MoleculeParserError):
-    """Raised when there are any empty brackets in the molecular formula."""
-    def __init__(self, message: str = "Empty brackets in molecular formula!") -> None:
+    """Raised when there are any empty brackets in the chemical formula."""
+    def __init__(self, message: str = "Empty brackets in chemical formula!") -> None:
         self.message = message
         super().__init__(self.message)
 
 class SpecialCharactersInString(MoleculeParserError):
-    """Raised when special character in molecular formula."""
+    """Raised when special character in chemical formula."""
     
     def __init__(self, ind: list = None, formula: str = "", message: str = "Special(s) character(s)") -> None:
         if ind is not None:
@@ -49,27 +49,27 @@ class SpecialCharactersInString(MoleculeParserError):
 
 class MoleculeParser:
     """
-    A parser class to parse molecular formulas as strings.
+    A parser class to parse chemical formulas as strings.
 
     Attributes
     ----------
     opening_brackets_type: str, optional
-        The type of opening brackets allowed in the molecular formula.
+        The type of opening brackets allowed in the chemical formula.
     closing_brackets_type: str, optional
-        The type of closing brackets allowed in the molecular formula.
+        The type of closing brackets allowed in the chemical formula.
     
     Methods
     ----------
     areBracketsOk(molecule_str: str):
-        Check if brackets are missing in the molecular formula.
+        Check if brackets are missing in the chemical formula.
     hasSpecialCharacters(molecule_str: str):
-        Return True if there is any special character in the molecular formula and their indexes.
+        Return True if there is any special character in the chemical formula and their indexes.
     hasLetters(molecule_str: str):
-        Return True if there are letters in the molecular formula.
+        Return True if there are letters in the chemical formula.
     hasEmptyBrackets(molecule_str: str):
-        Return True if there are any empty brackets in the molecular formula.
+        Return True if there are any empty brackets in the chemical formula.
     parse(molecule_str: str):
-        Parse the molecular formula.
+        Parse the chemical formula.
     """
 
     def __init__(self, opening_brackets_type: str = "([{", 
@@ -80,7 +80,7 @@ class MoleculeParser:
 
 
     def areBracketsOk(self, molecule_str: str) -> bool:
-        """Check if brackets are missing in the molecular formula."""
+        """Check if brackets are missing in the chemical formula."""
         c_round_brackets = 0
         c_square_brackets = 0
         c_curly_brackets = 0
@@ -102,17 +102,17 @@ class MoleculeParser:
         return (c_round_brackets == 0 and c_square_brackets == 0 and c_curly_brackets == 0)
 
     def hasSpecialCharacters(self, molecule_str: str) -> tuple[bool, list]:
-        """Return True if there is any special character in the molecular formula and their indexes."""
+        """Return True if there is any special character in the chemical formula and their indexes."""
         special_characters = " !\"#$%&\'*+,-./:;<=>?@\\^_`~|"
         ind = [ch in special_characters for ch in molecule_str]
         return any(ind), [i for i, x in enumerate(ind) if x]
     
     def hasLetters(self, molecule_str: str) -> bool:
-        """Return True if there are letters in the molecular formula."""
+        """Return True if there are letters in the chemical formula."""
         return molecule_str.lower().islower()
 
     def hasEmptyBrackets(self, molecule_str: str) -> bool:
-        """Return True if there are any empty brackets in the molecular formula."""
+        """Return True if there are any empty brackets in the chemical formula."""
         ind = 0
         while ind < len(molecule_str) - 1:
             ch = molecule_str[ind]
@@ -123,7 +123,7 @@ class MoleculeParser:
     
     def parse(self, molecule_str: str) -> dict:
         """
-        Parse the molecular formula.
+        Parse the chemical formula.
         Return a dictionary of the atoms that make the molecule.
         """
         if not molecule_str:
@@ -142,7 +142,7 @@ class MoleculeParser:
         if self.hasEmptyBrackets(molecule_str):
             raise hasEmptyBrackets()
         
-        # at this point, the molecular formula makes sense to be parsed.
+        # at this point, the chemical formula makes sense to be parsed.
         # https://codereview.stackexchange.com/questions/232630/parsing-molecular-formula
 
         molecule_tokens = re.findall("[A-Z][a-z]?|\\d+|.", molecule_str)

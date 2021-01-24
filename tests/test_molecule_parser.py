@@ -48,7 +48,7 @@ class MoleculeParserTestCase(unittest.TestCase):
     
     def test_parse(self) -> None:
         """Test if parse() works."""
-        # molecular formulas without any brackets
+        # chemical formulas without any brackets
         formulas = {
             "C": {'C': 1},
             "HO": {'H': 1, 'O': 1},
@@ -60,7 +60,7 @@ class MoleculeParserTestCase(unittest.TestCase):
         for formula, res in formulas.items():
             self.assertDictEqual(res, self.mp.parse(formula), "Issue with formula: {}.".format(formula))
         
-        # molecular formulas with linear brackets (not nested)
+        # chemical formulas with linear brackets (not nested)
         formulas = {
             "(C)": {'C': 1},
             "3(H2O)": {'H': 6, 'O': 3},
@@ -75,7 +75,7 @@ class MoleculeParserTestCase(unittest.TestCase):
         for formula, res in formulas.items():
             self.assertDictEqual(res, self.mp.parse(formula), "Issue with formula: {}.".format(formula))
 
-        # molecular formulas with nested brackets
+        # chemical formulas with nested brackets
         formulas = {
             "[{(C)}]": {'C': 1},
             "((Fe3))": {'Fe': 3},
@@ -94,10 +94,10 @@ class MoleculeParserTestCase(unittest.TestCase):
         formulas = {
             "H2O!": "Special(s) character(s) ['!'] at index(es) [3].",
             "H2O!!!": "Special(s) character(s) ['!', '!', '!'] at index(es) [3, 4, 5].",
-            "": "The molecular formula is empty!",
-            "111": "No letter in molecular formula!",
-            "(H2O)(": "Missing brackets in molecular formula!",
-            "()H2O": "Empty brackets in molecular formula!",
+            "": "The chemical formula is empty!",
+            "111": "No letter in chemical formula!",
+            "(H2O)(": "Missing brackets in chemical formula!",
+            "()H2O": "Empty brackets in chemical formula!",
         }
         for formula, error_message in formulas.items():
             with self.assertRaises(Exception) as context:
