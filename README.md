@@ -19,6 +19,18 @@ Use `^Z` (ctrl +Z) to escape from the input command.
 
 ## Examples
 
+## CO and H<sub>2</sub>O
+```
+> python main.py -i
+CO
+H2O
+^Z
+```
+returns
+```
+{'C': 1, 'O': 1}
+{'H': 2, 'O': 1}
+```
 ### Fe<sub>2</sub>O<sub>3</sub>
 
 ```
