@@ -1,7 +1,7 @@
 """A class that can be used to represent a molecule parser."""
 
-from ChemicalFormulaParser.atom import Atom
-from ChemicalFormulaParser.molecule import Molecule
+from src.atom import Atom
+from src.molecule import Molecule
 import re # for re.findall()
 
 # we use Regular Expression (RegEx) module to parse the molecular formula

@@ -1,6 +1,6 @@
 """A class that can be used to represent a molecule."""
 
-from ChemicalFormulaParser.atom import Atom
+from src.atom import Atom
 
 class Molecule:
     """
