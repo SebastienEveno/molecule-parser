@@ -19,7 +19,7 @@ Use `^Z` (ctrl +Z) to escape from the input command.
 
 ## Examples
 
-## CO and H<sub>2</sub>O
+### CO and H<sub>2</sub>O
 ```
 > python main.py -i
 CO
