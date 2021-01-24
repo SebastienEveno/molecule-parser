@@ -10,7 +10,7 @@ Local Python version:
 ```
 python --version
 ```
-## Example
+## Examples
 ### Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>
 `"Al2(SO4)3"` will give `{'Al': 2, 'S': 3, 'O': 12}`.
 
@@ -18,5 +18,42 @@ python --version
 > python main.py -i
 Al2(SO4)3
 ^Z
+```
+returns
+```
 {'Al': 2, 'S': 3, 'O': 12}
+```
+
+### Fe<sub>2</sub>O<sub>3</sub>
+
+```
+> python main.py -i
+Fe2O3
+^Z
+```
+returns
+```
+{'Fe': 2, 'O': 3}
+```
+### (NH<sub>4</sub>)<sub>2</sub>HPO<sub>4</sub>
+
+```
+> python main.py -i
+(NH4)2HPO4
+^Z
+```
+returns
+```
+{'H': 9, 'P': 1, 'O': 4, 'N': 2}
+```
+### Mg<sub>2</sub>[CH<sub>4</sub>{NNi<sub>2</sub>(Li<sub>2</sub>O<sub>4</sub>)<sub>5</sub>}<sub>14</sub>]<sub>3</sub>
+
+```
+> python main.py -i
+Mg2[CH4{NNi2(Li2O4)5}14]3
+^Z
+```
+returns
+```
+{'Mg': 2, 'C': 3, 'H': 12, 'N': 42, 'Ni': 84, 'Li': 420, 'O': 840}
 ```
