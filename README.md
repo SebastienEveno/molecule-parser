@@ -11,7 +11,7 @@ Local Python version:
 python --version
 ```
 
-## Use
+## Usage
 
 Use the command line `python parser.py -i` to read from user input.
 You can add as many chemical formulas as you like, line by line.
