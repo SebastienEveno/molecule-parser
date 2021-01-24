@@ -27,7 +27,7 @@ class Molecule:
         Return a dictionary of the atoms that make the molecule.
     """
 
-    def __init__(self, number: int = 1, atoms=None, submolecules=None) -> None:
+    def __init__(self, number: int = 1, atoms: list = None, submolecules: list = None) -> None:
         """
         Initialize the molecule's attributes.
         
@@ -61,7 +61,7 @@ class Molecule:
         """
         self.atoms.append(atom)
     
-    def addSubmolecule(self, submolecule) -> None:
+    def addSubmolecule(self, submolecule: Molecule) -> None:
         """
         Add a submolecule (of type Molecule) to the list of submolecules.
         

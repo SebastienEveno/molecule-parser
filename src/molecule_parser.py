@@ -13,32 +13,32 @@ class MoleculeParserError(Exception):
 
 class EmptyMoleculeString(MoleculeParserError):
     """Raised when empty molecular formula."""
-    def __init__(self, message="The molecular formula is empty!") -> None:
+    def __init__(self, message: str = "The molecular formula is empty!") -> None:
         self.message = message
         super().__init__(self.message)
     
 class BracketsNotOk(MoleculeParserError):
     """Raised when brackets are missing in molecular formula."""
-    def __init__(self, message="Missing brackets in molecular formula!") -> None:
+    def __init__(self, message: str = "Missing brackets in molecular formula!") -> None:
         self.message = message
         super().__init__(self.message)
 
 class hasNoLetters(MoleculeParserError):
     """Raised when there is no letters in molecular formula."""
-    def __init__(self, message="No letter in molecular formula!") -> None:
+    def __init__(self, message: str = "No letter in molecular formula!") -> None:
         self.message = message
         super().__init__(self.message)
 
 class hasEmptyBrackets(MoleculeParserError):
     """Raised when there are any empty brackets in the molecular formula."""
-    def __init__(self, message="Empty brackets in molecular formula!") -> None:
+    def __init__(self, message: str = "Empty brackets in molecular formula!") -> None:
         self.message = message
         super().__init__(self.message)
 
 class SpecialCharactersInString(MoleculeParserError):
     """Raised when special character in molecular formula."""
     
-    def __init__(self, ind=None, formula="", message="Special(s) character(s)") -> None:
+    def __init__(self, ind: list = None, formula: str = "", message: str = "Special(s) character(s)") -> None:
         if ind is not None:
             self.ind = ind
         else:
@@ -142,7 +142,7 @@ class MoleculeParser:
         if self.hasEmptyBrackets(molecule_str):
             raise hasEmptyBrackets()
         
-        # at this point, the molecule string (formula) makes sense to be parsed.
+        # at this point, the molecular formula makes sense to be parsed.
         # https://codereview.stackexchange.com/questions/232630/parsing-molecular-formula
 
         molecule_tokens = re.findall("[A-Z][a-z]?|\\d+|.", molecule_str)

@@ -19,7 +19,7 @@ class Atom:
         Return the atom number.
     """
     
-    def __init__(self, symbol="", number: int = 1) -> None:
+    def __init__(self, symbol: str = "", number: int = 1) -> None:
         """Initialize the atom's attributes."""
         self.symbol = symbol
         self.number = number
