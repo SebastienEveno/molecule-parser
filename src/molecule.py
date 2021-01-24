@@ -61,7 +61,7 @@ class Molecule:
         """
         self.atoms.append(atom)
     
-    def addSubmolecule(self, submolecule: Molecule) -> None:
+    def addSubmolecule(self, submolecule) -> None:
         """
         Add a submolecule (of type Molecule) to the list of submolecules.
         
