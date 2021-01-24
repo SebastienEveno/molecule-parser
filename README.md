@@ -14,8 +14,8 @@ python --version
 ## Use
 
 Use the command line `python main.py -i` to read from user input.
-You can add as many chemical formulas, line by line.
-Use `^Z` (ctrl +Z) to escape the input command.
+You can add as many chemical formulas as you like, line by line.
+Use `^Z` (ctrl +Z) to escape from the input command.
 
 ## Examples
 
