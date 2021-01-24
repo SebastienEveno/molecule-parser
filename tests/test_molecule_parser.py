@@ -104,6 +104,6 @@ class MoleculeParserTestCase(unittest.TestCase):
                 self.mp.parse(formula)
             self.assertTrue(error_message in str(context.exception), "Unexpected exception message '{}', excepted '{}'".format(str(context.exception), error_message))
 
-# if __name__ == "__main__":
-#     unittest.main()
+if __name__ == "__main__":
+    unittest.main()
 
