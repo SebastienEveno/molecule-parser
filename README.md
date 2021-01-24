@@ -15,7 +15,7 @@ python --version
 
 Use the command line `python parser.py -i` to read from user input.
 You can add as many chemical formulas as you like, line by line.
-Use `^Z` (ctrl +Z) to escape from the input command.
+Use `^Z` (ctrl +Z) and press Enter to escape from the input command.
 
 ## Examples
 
