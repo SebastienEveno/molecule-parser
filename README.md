@@ -13,3 +13,10 @@ python --version
 ## Example
 ### Al<sub>2</sub>(SO<sub>4</sub>)<sub>3</sub>
 `"Al2(SO4)3"` will give `{'Al': 2, 'S': 3, 'O': 12}`.
+
+```
+> python main.py -i
+Al2(SO4)3
+^Z
+{'Al': 2, 'S': 3, 'O': 12}
+```
