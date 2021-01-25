@@ -33,7 +33,7 @@ returns
 {'C': 1, 'O': 1}
 {'H': 2, 'O': 1}
 ```
-
+For JSON output format:
 ```
 $ python parser.py -i -j
 CO
