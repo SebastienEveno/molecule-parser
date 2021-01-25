@@ -17,6 +17,8 @@ Use the command line `python parser.py -i` to read from user input.
 You can add as many chemical formulas as you like, line by line.
 Use `^Z` (ctrl +Z) and press Enter to escape from the input command.
 
+If you use the command line `python parser.py -i -j`, the output format will be json.
+
 ## Examples
 
 ### CO and H<sub>2</sub>O
@@ -30,6 +32,26 @@ returns
 ```
 {'C': 1, 'O': 1}
 {'H': 2, 'O': 1}
+```
+
+```
+$ python parser.py -i -j
+CO
+H2O
+^Z
+```
+returns
+```
+[
+    {
+        "C": 1,
+        "O": 1
+    },
+    {
+        "H": 2,
+        "O": 1
+    }
+]
 ```
 ### Fe<sub>2</sub>O<sub>3</sub>
 
